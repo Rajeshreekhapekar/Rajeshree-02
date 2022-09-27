@@ -1,0 +1,19 @@
+<apex:page standardController="opportunity" recordSetVar="opportunities">
+   <apex:form >
+       <apex:pageBlock id="opportunityDetails">
+           <apex:detail subject="{!$CurrentPage.parameters.oid}"  relatedList="false" />
+       </apex:pageBlock>
+    <apex:pageBlock title="opportunity list">
+      <apex:pageBlockTable value="{!opportunities}" var="Oop" >
+          <apex:column >
+              <apex:commandLink reRender="opportunityDetails">
+              {!Oop.name}
+                 <apex:param name="oid" value="{!Oop.id}"/>
+              </apex:commandLink>
+          </apex:column>
+          <apex:column value="{!Oop.NextStep}"/>
+          <apex:column value="{!Oop.StageName}"/>
+        </apex:pageBlockTable>  
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

@@ -1,0 +1,9 @@
+<apex:page controller="StudentController" >
+    <apex:form >
+      <apex:outputPanel id="StudentDetail">
+           {!Student}
+        </apex:outputPanel><BR/>
+        <apex:commandButton action="{!fetchStudent}" value="Fetch button"/>
+    </apex:form>
+    
+</apex:page>

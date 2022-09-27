@@ -1,0 +1,7 @@
+<apex:page controller="ControllerPassPAramNew">
+  <apex:form >
+    <apex:inputField value="{!account.name}"/>
+    <apex:commandButton action="{!save}" value="new save"/>
+     <apex:commandButton action="{!goToNewPage}" value="Go To New Page"/>
+  </apex:form>
+</apex:page>

@@ -1,0 +1,29 @@
+<apex:page standardController="account">
+    
+        
+    	
+    <h1>
+        print account name
+    </h1>
+    <p>
+         This is  {!account.name} page.
+    </p>
+    <apex:form >
+    <apex:pageBlock >
+         <apex:pageBlockSection title="account details">
+            <apex:outputField label="name" value="{!account.name}"/><BR/>
+            <apex:outputField label="account owner name" value="{!account.owner.name}" /> 
+        </apex:pageBlockSection>
+       
+        <apex:pageBlockSection title="account detail">
+            <apex:inputField value="{!account.name}"/>
+        </apex:pageBlockSection>
+        
+          <apex:pageBlockSection title="click">
+              <center>
+                 <apex:commandButton action="{!save}" value="save1"/>
+             </center>		
+           </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

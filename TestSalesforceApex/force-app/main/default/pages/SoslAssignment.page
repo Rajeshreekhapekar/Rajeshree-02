@@ -1,0 +1,33 @@
+<apex:page controller="SOSLcontroller">
+    <apex:form >
+        <apex:inputText value="{!searchStr}"/>
+        <apex:commandButton value="Search in Account,Contact,Opportunity" action="{!soslDemo_method}" reRender="acct,error,cont,oppt" status="actStatusId"/>
+        <apex:actionStatus id="actStatusId">
+            <apex:facet name="start">
+            </apex:facet>
+        </apex:actionStatus>
+    </apex:form>
+    <apex:outputPanel title="" id="error">
+        <apex:pageMessages >
+        </apex:pageMessages>
+    </apex:outputPanel>
+    <apex:pageBlock title="Account" id="acct">
+        <apex:pageBlockTable value="{!accList}" var="acc">
+           <apex:column value="{!acc.name}"/> 
+            <apex:column value="{!acc.type}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    <apex:pageBlock title="Contact" id="cont">
+        <apex:pageBlockTable value="{!conList}" var="con">
+           <apex:column value="{!con.name}"/> 
+            <apex:column value="{!con.email}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    <apex:pageBlock title="Oppertunity" id="oppt">
+        <apex:pageBlockTable value="{!optyList}" var="opty">
+           <apex:column value="{!opty.name}"/> 
+            <apex:column value="{!opty.StageName}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    
+</apex:page>

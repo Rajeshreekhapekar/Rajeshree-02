@@ -1,0 +1,13 @@
+<apex:page standardController="account">
+    <apex:pageBlock title="hello {!$User.FirstName}!">
+        you are viewing the {!account.name} account.
+    </apex:pageBlock>
+    <apex:pageBlock title="contacts">
+        <apex:pageBlockTable value="{!account.contacts}" var="cont">
+            <apex:column value="{!cont.name}"/>
+                <apex:column value="{!cont.email}"/>
+                <apex:column value="{!cont.birthdate}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    
+</apex:page>

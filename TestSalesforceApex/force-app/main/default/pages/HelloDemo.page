@@ -1,0 +1,10 @@
+<apex:page sidebar="false" showHeader="false" >
+    <h1> congratulation </h1>
+     This is your new page
+    <p>
+        hello{!$User.FirstName}
+       
+    </p>
+   
+   
+</apex:page>

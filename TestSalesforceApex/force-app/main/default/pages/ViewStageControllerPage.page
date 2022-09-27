@@ -1,0 +1,7 @@
+<apex:page controller="VIewStateController" >
+    <apex:form >
+      {!a}
+       {!oop.name}
+        <apex:commandButton action="{!changeData}" value="Click Me"/>
+    </apex:form>
+</apex:page>
